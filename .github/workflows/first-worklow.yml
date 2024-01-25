@@ -36,3 +36,9 @@ jobs:
         VARIABLE_NAME: value
     - name: Step two
       run: echo "Step 2 complete!"
+
+  job2:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Step one
+      run: echo "Job 2 Step 1"
