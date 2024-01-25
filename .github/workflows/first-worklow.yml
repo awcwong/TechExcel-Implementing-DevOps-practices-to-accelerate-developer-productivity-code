@@ -14,6 +14,10 @@ on:
   issues:
     types: [opened]
 
+
+env:
+  MESSAGE: Greetings
+
 # This section covers the work to perform.
 # We include one or more jobs in this section.
 jobs:
@@ -32,6 +36,7 @@ jobs:
       run: |
         dt=$(date)
         echo $dt $HOSTNAME
+        echo $MESSAGE
         echo "Step 1 complete!"
       # This section does not appear in the solution file but demonstrates how to set
       # custom variables that will be available in the run script.
@@ -55,7 +60,7 @@ jobs:
       uses: mscoutermarsh/cowsays-action@v1
       with:
         # What does the cow say?
-        text: Ready for prod–ship it!
+        text: ${Ready for prod–ship it! {env.MESSAGE}}
         # Color of your cow
         color: magenta
           
