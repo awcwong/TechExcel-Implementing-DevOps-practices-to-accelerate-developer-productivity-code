@@ -60,7 +60,7 @@ jobs:
       uses: mscoutermarsh/cowsays-action@v1
       with:
         # What does the cow say?
-        text: ${Ready for prod–ship it! {env.MESSAGE}}
+        text: "${ Ready for prod–ship it! {env.MESSAGE} }"
         # Color of your cow
         color: magenta
           
