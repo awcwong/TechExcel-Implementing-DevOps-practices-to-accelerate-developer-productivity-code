@@ -41,4 +41,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Step one
-      run: echo "Job 2 Step 1"
+      run: |
+        dt=$(date)
+        echo $dt $HOSTNAME
+        echo "Job 2 Step 1"
