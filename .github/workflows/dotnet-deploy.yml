@@ -69,9 +69,6 @@ jobs:
       id-token: write
       contents: read
     needs: dockerBuildPush
-    environment:
-      name: dev
-      url: https://y6okv44sq46hm-dev.azurewebsites.net/
     
     steps:
     - name: 'Login via Azure CLI'
