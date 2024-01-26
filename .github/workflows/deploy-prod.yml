@@ -11,7 +11,7 @@ env:
 
 # The overall workflow name will be Azure Bicep. This will show up in the
 # GitHub Action page.
-name: Azure Bicep
+name: Azure Bicep - Prod
 jobs:
   # This script has one job: build and deploy the IaC resources
   build-and-deploy:
