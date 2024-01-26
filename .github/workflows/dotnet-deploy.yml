@@ -61,3 +61,22 @@ jobs:
       
     - name: Docker Push
       run: docker push $registryName/$repositoryName:$tag
+
+ deploy-to-dev:
+  
+    runs-on: ubuntu-latest
+    needs: dockerBuildPush
+    environment:
+      name: dev
+      url: https://y6okv44sq46hm-dev.azurewebsites.net/
+    
+    steps:
+      - name: 'Login via Azure CLI'
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - uses: azure/webapps-deploy@v2
+        with:
+          app-name: 'y6okv44sq46hm-dev'
+          images: y6okv44sq46hmmpnpreg.azurecr.io/techboost/dotnetcoreapp:${{github.run_number}}
